@@ -1,24 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Inter:wght@100..900&display=swap');
 
-        :root {
-            /* Primary */
-            --teal-blue: #1a428c;
-            /* Secondary */
-            --soft-coral: #FF6F61;
-            /* Neutral colors */
-            --dark-charcoal: #333;
-            --light-slate-gray: #f1f1f1;
-            /* Accent color */
-            --golden-yellow: #9402c0;
-            /* Text colors */
-            --text-primary: #FFF;
-            --text-secondary: #B0B0B0;
+        :root, :root[data-theme="light"]{
+            /* Light Mode Variables */
+            --bg-color: #f1f1f1;
+            --text-color: #333;
+            --header-bg: #f1f1f1;
+            --header-border: #B0B0B0;
+            --link-hover: #9402c0;
+            --service-bg: #9402c0;
+            --box-shadow: 5px 5px 2px 1px rgba(204, 0, 255, 0.2);
+            --img-shadow: 3px 3px 3px #79797933;
+            --footer-bg: #333;
+            --footer-text: white;
+        }
 
-            --primary-font: "Mulish", Tahoma, Geneva, Verdana, sans-serif;;
-            --h1: 'Lato', Tahoma, Geneva, Verdana, sans-serif;
-            --h2: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
-            --h3: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
-            --h4: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+        /* Dark Mode Variables */
+        :root[data-theme='dark'] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --header-bg: #1e1e1e;
+            --header-border: #333;
+            --link-hover: #bb86fc;
+            --service-bg: #3f3f3f;
+            --box-shadow: 5px 5px 2px 1px rgba(95, 89, 102, 0.2);
+            --img-shadow: 3px 3px 3px #1a1a1a;
+            --footer-bg: #282828;
+            --footer-text: #e0e0e0;
         }
 
         /* General Reset */
@@ -30,27 +37,35 @@
 
         /* Body Styling */
         body {
-            font-family: var(--primary-font);
+            font-family: "Mulish", Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            background-color: var(--light-slate-gray);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark/light mode */
         }
 
         /* Header Styling */
         header {
-            background-color: var(--light-slate-gray);
-            color: var(--dark-charcoal);
+            background-color: var(--header-bg);
+            color: var(--text-color);
             padding: 1rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--text-secondary);
-            position: sticky; /* Make header sticky */
-            top: 0; /* Stick to the top */
-            z-index: 100; /* Ensure it's above other content */
+            border-bottom: 1px solid var(--header-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
         }
 
         header .logo {
             margin-left: 30px;
+        }
+
+        header .logo a {
+            color: var(--text-color);
+            text-decoration: none;
         }
 
         header nav ul {
@@ -63,14 +78,15 @@
         }
 
         header nav ul li a {
-            color: var(--dark-charcoal);
+            color: var(--text-color);
             text-decoration: none;
             text-transform: uppercase;
             font-weight: 600;
+            transition: color 0.3s; /* Smooth transition */
         }
 
         header nav ul li a:hover {
-            color: var(--golden-yellow);
+            color: var(--link-hover);
         }
 
         /* Section Styling */
@@ -82,9 +98,10 @@
         section h2 {
             text-align: center;
             margin-bottom: 1rem;
-            font-family: var(--h1);
-            color: var(--electric-blue);
+            font-family: 'Lato', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
             text-transform: uppercase;
+            transition: color 0.3s; /* Smooth transition */
         }
 
         .container {
@@ -108,6 +125,17 @@
 
         #services li {
             font-size: 1.2rem;
+            padding: 10px;
+            width: 25%;
+            height: 100px;
+            background: var(--service-bg);
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            color: white;
+            border-radius: 5px;
+            box-shadow: var(--box-shadow);
+            transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
         }
 
         /* Games Gallery */
@@ -125,6 +153,8 @@
             max-width: 100%;
             height: auto;
             border-radius: 8px;
+            box-shadow: var(--img-shadow);
+            transition: box-shadow 0.3s; /* Smooth transition */
         }
 
         /* Contact Form */
@@ -141,47 +171,34 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-        }
+            background-color: white;
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+            resize: vertical;
+}
 
         form button {
-            background-color: #333;
-            color: white;
+            background-color: var(--text-color);
+            color: var(--bg-color);
             border: none;
             padding: 10px 20px;
             cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
         }
 
         form button:hover {
             background-color: #555;
+            color: white;
         }
 
         /* Footer Styling */
         footer {
-            background-color: #333;
-            color: white;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
             text-align: center;
             padding: 1rem;
             margin-top: 2rem;
-        }
-
-        #services ul {
-            display: flex;
-            flex-direction: row;
-            align-content: center;
-            align-items: center;
-        }
-
-        #services li {
-            padding: 10px;
-            width: 25%;
-            height: 100px;
-            background: var(--golden-yellow);
-            text-align: center;
-            align-items: center;
-            align-content: center;
-            color: white;
-            border-radius: 5px;
-            box-shadow: 5px 5px 2px 1px rgba(204, 0, 255, 0.2);
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
         }
 
         .logo img {
@@ -197,16 +214,66 @@
         section img {
             width: 50%;
             border-radius: 5px;
-            box-shadow: 3px 3px 3px #79797933;
             max-height: 500px;
             object-fit: cover;
         }
 
         h2 {
             font-size: 32px;
-            padding-bottom: 50px;
         }
 
         section {
             padding-top: 100px;
+        }
+
+
+        #contact p {
+            padding-bottom: 30px;
+        }
+
+        #contact form div input {
+            width: 48%;
+            font-family: var(--primary-font);
+        }
+
+        #contact form div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        #message {
+            height: 200px;
+            font-family: var(--primary-font);
+        }
+
+        #contact form button {
+            font-family: var(--primary-font);
+        }
+
+        #header-toggle {
+            position: fixed;
+            bottom: 80px;
+            right: 80px;
+            z-index: 99;
+            height: 5rem;
+            width: 5rem;
+            background-color: var(--text-color);
+            border-radius: 100px;
+            box-shadow: var(--img-shadow);
+        }
+
+        #header-toggle:hover {
+            cursor: pointer;
+        }
+
+        #toggleTheme {
+            color: var(--bg-color);
+            height: 5rem;
+            width: 5rem;
+            position: absolute;
+            align-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 30px;
         }
