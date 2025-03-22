@@ -42,6 +42,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark/light mode */
+
         }
 
         /* Header Styling */
@@ -92,7 +93,7 @@
         /* Section Styling */
         section {
             padding: 2rem;
-            margin: 20px 0;
+            margin: 20px 100px;
         }
 
         section h2 {
@@ -253,11 +254,11 @@
 
         #header-toggle {
             position: fixed;
-            bottom: 80px;
-            right: 80px;
+            bottom: 70px;
+            left: 30px;
             z-index: 99;
-            height: 5rem;
-            width: 5rem;
+            height: 4rem;
+            width: 4rem;
             background-color: var(--text-color);
             border-radius: 100px;
             box-shadow: var(--img-shadow);
@@ -269,8 +270,8 @@
 
         #toggleTheme {
             color: var(--bg-color);
-            height: 5rem;
-            width: 5rem;
+            height: 4rem;
+            width: 4rem;
             position: absolute;
             align-content: center;
             align-items: center;
