@@ -1,174 +1,212 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Inter:wght@100..900&display=swap');
 
+        :root {
+            /* Primary */
+            --teal-blue: #1a428c;
+            /* Secondary */
+            --soft-coral: #FF6F61;
+            /* Neutral colors */
+            --dark-charcoal: #333;
+            --light-slate-gray: #f1f1f1;
+            /* Accent color */
+            --golden-yellow: #9402c0;
+            /* Text colors */
+            --text-primary: #FFF;
+            --text-secondary: #B0B0B0;
 
-:root {
-    /* Primary */
-    --teal-blue: #1A7F8C;
-    /* Secondary */
-    --soft-coral: #FF6F61;
-    /* Neutral colors */
-    --dark-charcoal: #333;
-    --light-slate-gray: #f1f1f1;
-    /* Accent color */
-    --golden-yellow: #FFC947;
-    /* Text colors */
-    --text-primary: #FFF;
-    --text-secondary: #B0B0B0 ;
+            --primary-font: "Mulish", Tahoma, Geneva, Verdana, sans-serif;;
+            --h1: 'Lato', Tahoma, Geneva, Verdana, sans-serif;
+            --h2: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+            --h3: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+            --h4: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    --primary-font: "Mulish", Tahoma, Geneva, Verdana, sans-serif;;
-    --h1: 'Lato', Tahoma, Geneva, Verdana, sans-serif;
-    --h2: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
-    --h3: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
-    --h4: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
-}
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Body Styling */
+        body {
+            font-family: var(--primary-font);
+            line-height: 1.6;
+            background-color: var(--light-slate-gray);
+        }
 
-/* Body Styling */
-body {
-    font-family: var(--primary-font);
-    line-height: 1.6;
-    background-color: var(--light-slate-gray);
-}
+        /* Header Styling */
+        header {
+            background-color: var(--light-slate-gray);
+            color: var(--dark-charcoal);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--text-secondary);
+            position: sticky; /* Make header sticky */
+            top: 0; /* Stick to the top */
+            z-index: 100; /* Ensure it's above other content */
+        }
 
-/* Header Styling */
-header {
-    background-color: white;
-    color: var(--teal-blue);
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--text-secondary);
-}
+        header .logo {
+            margin-left: 30px;
+        }
 
-header .logo {
-    margin-left: 30px;
-}
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-header nav ul {
-    display: flex;
-    list-style: none;
-}
+        header nav ul li {
+            margin-right: 20px;
+        }
 
-header nav ul li {
-    margin-right: 20px;
-}
+        header nav ul li a {
+            color: var(--dark-charcoal);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
 
-header nav ul li a {
-    color: var(--electric-blue);
-    text-decoration: none;
-    text-transform: uppercase;
-}
+        header nav ul li a:hover {
+            color: var(--golden-yellow);
+        }
 
-/* Section Styling */
-section {
-    padding: 2rem;
-    margin: 20px 0;
-}
+        /* Section Styling */
+        section {
+            padding: 2rem;
+            margin: 20px 0;
+        }
 
-section h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    font-family: var(--h2);
-    color: var(--electric-blue);
-    text-transform: uppercase;
-}
+        section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-family: var(--h1);
+            color: var(--electric-blue);
+            text-transform: uppercase;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* About Section */
-#about p {
-    text-align: center;
-}
+        /* About Section */
+        #about p, #about h2 {
+            text-align: center;
+        }
 
-/* Services Section */
-#services ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
+        /* Services Section */
+        #services ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
 
-#services li {
-    font-size: 1.2rem;
-}
+        #services li {
+            font-size: 1.2rem;
+        }
 
-/* Games Gallery */
-#games .games-gallery {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-}
+        /* Games Gallery */
+        #games .games-gallery {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
 
-#games .game-item {
-    text-align: center;
-}
+        #games .game-item {
+            text-align: center;
+        }
 
-#games .game-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
+        #games .game-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
 
-/* Contact Form */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-form input, form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-form button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
+        form button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
 
-form button:hover {
-    background-color: #555;
-}
+        form button:hover {
+            background-color: #555;
+        }
 
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
 
+        #services ul {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            align-items: center;
+        }
 
+        #services li {
+            padding: 10px;
+            width: 25%;
+            height: 100px;
+            background: var(--golden-yellow);
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 5px 5px 2px 1px rgba(204, 0, 255, 0.2);
+        }
 
+        .logo img {
+            height: 2.5rem;
+        }
 
+        section {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
 
+        section img {
+            width: 50%;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px #79797933;
+            max-height: 500px;
+            object-fit: cover;
+        }
 
+        h2 {
+            font-size: 32px;
+            padding-bottom: 50px;
+        }
 
-
-
-
-
-
-
-.logo img {
-    height: 2.5rem;
-}
+        section {
+            padding-top: 100px;
+        }
