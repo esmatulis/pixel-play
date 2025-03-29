@@ -14,3 +14,8 @@ function changeTheme () {
 
 toggleTheme.addEventListener("click", changeTheme);
 // fim função mudar Tema do site
+
+function toggleMenu() {
+    const navList = document.getElementById('nav-list');
+    navList.classList.toggle('active'); // Toggle the 'active' class
+}
